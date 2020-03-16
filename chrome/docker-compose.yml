@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  chrome:
+    build: .
+    image: ludmann/chrome
+    privileged: true
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=${DISPLAY}
